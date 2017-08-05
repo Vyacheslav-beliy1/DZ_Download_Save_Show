@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class CDPost: NSManagedObject {
+    
     class func findOrCreate(with thePost:Post,in context:NSManagedObjectContext ) throws -> CDPost {
         
         let request: NSFetchRequest<CDPost> = CDPost.fetchRequest()
@@ -34,6 +35,5 @@ class CDPost: NSManagedObject {
         cdPost.body = thePost.body
         
         return cdPost
-
     }
 }

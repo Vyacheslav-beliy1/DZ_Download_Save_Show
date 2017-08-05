@@ -42,7 +42,7 @@ extension Post
 // MARK: CoreData extension
 extension Post
 {
-    class func initFrom(cdPost:CDPost) -> Post
+    init(cdPost:CDPost)
     {
        return Post(userID: cdPost.userID,
                    identifier: cdPost.identifier,
