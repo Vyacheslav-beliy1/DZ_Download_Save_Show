@@ -20,7 +20,7 @@ class CDPost: NSManagedObject {
             let matches = try context.fetch(request)
             if matches.count > 0
             {
-                assert(matches.count > 1, "Someohw therare not ONE object with identifier")
+                assert(matches.count == 1, "Someohw therare not ONE object with identifier")
                 return matches[0]
             }
         } catch {
