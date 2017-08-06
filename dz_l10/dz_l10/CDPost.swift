@@ -14,7 +14,7 @@ class CDPost: NSManagedObject {
     class func findOrCreate(with thePost:Post,in context:NSManagedObjectContext ) throws -> CDPost {
         
         let request: NSFetchRequest<CDPost> = CDPost.fetchRequest()
-        request.predicate = NSPredicate(format: "identifier == %@", thePost.identifier)
+        request.predicate = NSPredicate(format: "identifier == %d", thePost.identifier)
         
         do {
             let matches = try context.fetch(request)

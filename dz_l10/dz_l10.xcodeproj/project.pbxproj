@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		17727DFF1F36402D00749368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727DFE1F36402D00749368 /* AppDelegate.swift */; };
 		17727E041F36402D00749368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17727E021F36402D00749368 /* Main.storyboard */; };
-		17727E071F36402D00749368 /* dz_l10.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17727E051F36402D00749368 /* dz_l10.xcdatamodeld */; };
 		17727E091F36402D00749368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17727E081F36402D00749368 /* Assets.xcassets */; };
 		17727E0C1F36402D00749368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17727E0A1F36402D00749368 /* LaunchScreen.storyboard */; };
 		17727E161F366C4600749368 /* CDPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E151F366C4600749368 /* CDPost.swift */; };
@@ -17,13 +16,13 @@
 		17727E1A1F36789300749368 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E191F36789300749368 /* PostsTableViewController.swift */; };
 		17727E1C1F36808D00749368 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E1B1F36808D00749368 /* CoreDataManager.swift */; };
 		17727E261F369F3C00749368 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E251F369F3C00749368 /* PostsAPI.swift */; };
+		17727E291F36B1F200749368 /* dz_l10.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17727E271F36B1F200749368 /* dz_l10.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17727DFB1F36402D00749368 /* dz_l10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dz_l10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17727DFE1F36402D00749368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17727E031F36402D00749368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17727E061F36402D00749368 /* dz_l10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dz_l10.xcdatamodel; sourceTree = "<group>"; };
 		17727E081F36402D00749368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17727E0B1F36402D00749368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17727E0D1F36402D00749368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		17727E191F36789300749368 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		17727E1B1F36808D00749368 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		17727E251F369F3C00749368 /* PostsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsAPI.swift; sourceTree = "<group>"; };
+		17727E281F36B1F200749368 /* dz_l10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dz_l10.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 				17727E081F36402D00749368 /* Assets.xcassets */,
 				17727E0A1F36402D00749368 /* LaunchScreen.storyboard */,
 				17727E0D1F36402D00749368 /* Info.plist */,
-				17727E051F36402D00749368 /* dz_l10.xcdatamodeld */,
+				17727E271F36B1F200749368 /* dz_l10.xcdatamodeld */,
 			);
 			name = SupportFiles;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 				17727E1C1F36808D00749368 /* CoreDataManager.swift in Sources */,
 				17727E161F366C4600749368 /* CDPost.swift in Sources */,
 				17727E261F369F3C00749368 /* PostsAPI.swift in Sources */,
-				17727E071F36402D00749368 /* dz_l10.xcdatamodeld in Sources */,
 				17727DFF1F36402D00749368 /* AppDelegate.swift in Sources */,
+				17727E291F36B1F200749368 /* dz_l10.xcdatamodeld in Sources */,
 				17727E181F366C8700749368 /* Post.swift in Sources */,
 				17727E1A1F36789300749368 /* PostsTableViewController.swift in Sources */,
 			);
@@ -371,12 +371,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17727E051F36402D00749368 /* dz_l10.xcdatamodeld */ = {
+		17727E271F36B1F200749368 /* dz_l10.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				17727E061F36402D00749368 /* dz_l10.xcdatamodel */,
+				17727E281F36B1F200749368 /* dz_l10.xcdatamodel */,
 			);
-			currentVersion = 17727E061F36402D00749368 /* dz_l10.xcdatamodel */;
+			currentVersion = 17727E281F36B1F200749368 /* dz_l10.xcdatamodel */;
 			path = dz_l10.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

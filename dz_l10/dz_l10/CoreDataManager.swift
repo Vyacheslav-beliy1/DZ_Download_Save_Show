@@ -24,20 +24,22 @@ class CoreDataManager
         }
     }
     
-    func save(post:Post)
+    func save(posts:[Post])
     {
         if let context = container?.viewContext {
             context.perform {
                 [weak self] in
-                _ = try? CDPost.findOrCreate(with: post, in: context)
+                
+                for post in posts
+                {
+                    _ = try? CDPost.findOrCreate(with: post, in: context)
+                }
                 
                 try? context.save()
                 
                 self?.printDatabaseStatistics()
             }
-            
         }
-
     }
     
     func fetchPosts() -> [Post]? {

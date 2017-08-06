@@ -29,6 +29,8 @@ class PostsTableViewController: UITableViewController {
                 self?.posts?.append(contentsOf: unwrapedPosts)
                 
                 self?.tableView.reloadData()
+                
+                self?.coreDataManager.save(posts: unwrapedPosts)
             }
 
             sender.endRefreshing()
@@ -38,17 +40,13 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     // MARK: - Table view data source
 
+    var coreDataManager = CoreDataManager()
     var posts: [Post]?
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts?.count ?? 0
     }
