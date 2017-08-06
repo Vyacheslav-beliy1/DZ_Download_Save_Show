@@ -16,6 +16,7 @@
 		17727E181F366C8700749368 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E171F366C8700749368 /* Post.swift */; };
 		17727E1A1F36789300749368 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E191F36789300749368 /* PostsTableViewController.swift */; };
 		17727E1C1F36808D00749368 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E1B1F36808D00749368 /* CoreDataManager.swift */; };
+		17727E261F369F3C00749368 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17727E251F369F3C00749368 /* PostsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		17727E171F366C8700749368 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		17727E191F36789300749368 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		17727E1B1F36808D00749368 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		17727E251F369F3C00749368 /* PostsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		17727DFD1F36402D00749368 /* dz_l10 */ = {
 			isa = PBXGroup;
 			children = (
+				17727E221F368CCD00749368 /* NetWorking */,
 				17727E1F1F36894200749368 /* UI */,
 				17727E1E1F36892800749368 /* SupportFiles */,
 				17727E1D1F3687CD00749368 /* DataBase */,
@@ -114,6 +117,14 @@
 				17727E191F36789300749368 /* PostsTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		17727E221F368CCD00749368 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				17727E251F369F3C00749368 /* PostsAPI.swift */,
+			);
+			name = NetWorking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			files = (
 				17727E1C1F36808D00749368 /* CoreDataManager.swift in Sources */,
 				17727E161F366C4600749368 /* CDPost.swift in Sources */,
+				17727E261F369F3C00749368 /* PostsAPI.swift in Sources */,
 				17727E071F36402D00749368 /* dz_l10.xcdatamodeld in Sources */,
 				17727DFF1F36402D00749368 /* AppDelegate.swift in Sources */,
 				17727E181F366C8700749368 /* Post.swift in Sources */,

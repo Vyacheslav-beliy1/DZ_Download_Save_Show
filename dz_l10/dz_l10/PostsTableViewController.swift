@@ -16,7 +16,23 @@ class PostsTableViewController: UITableViewController {
     }
 
     @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
-        
+        sender.beginRefreshing()
+        PostsAPI.getPostsWith { [weak self] (downloadedPosts)  in
+
+            if let unwrapedPosts = downloadedPosts
+            {
+                if self?.posts == nil
+                {
+                    self?.posts = unwrapedPosts
+                }
+                
+                self?.posts?.append(contentsOf: unwrapedPosts)
+                
+                self?.tableView.reloadData()
+            }
+
+            sender.endRefreshing()
+        }
     }
     
     override func viewDidLoad() {
@@ -41,7 +57,15 @@ class PostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostsTableViewControllerTableViewCellIdentifier", for: indexPath)
 
-        cell.textLabel?.text = posts![indexPath.row].title
+        if let title = posts![indexPath.row].title
+        {
+            cell.textLabel?.text = "\(posts![indexPath.row].userID)" + title
+        }
+        else
+        {
+            cell.textLabel?.text = "\(posts![indexPath.row].userID)"
+        }
+        
         cell.detailTextLabel?.text = posts![indexPath.row].body
 
         return cell

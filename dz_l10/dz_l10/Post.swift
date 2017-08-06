@@ -21,12 +21,9 @@ class Post
         self.title = title
         self.body = body
     }
-}
-
-// MARK: JSON extension
-extension Post
-{
-    class func initFrom(json:[String:Any]) -> Post?
+    
+    // MARK: JSON handlers
+    class func postFrom(json:[String:Any]) -> Post?
     {
         guard let userID = json["userId"] as? Int64,
             let id = json["id"] as? Int64
@@ -37,16 +34,13 @@ extension Post
                     title: json["title"] as? String,
                     body: json["body"] as? String)
     }
-}
-
-// MARK: CoreData extension
-extension Post
-{
-    init(cdPost:CDPost)
+    
+    // MARK: CoreData handlers
+    class func postFrom(cdPost:CDPost) -> Post
     {
-       return Post(userID: cdPost.userID,
-                   identifier: cdPost.identifier,
-                   title: cdPost.title,
-                   body: cdPost.body)
+        return Post(userID: cdPost.userID,
+                    identifier: cdPost.identifier,
+                    title: cdPost.title,
+                    body: cdPost.body)
     }
 }

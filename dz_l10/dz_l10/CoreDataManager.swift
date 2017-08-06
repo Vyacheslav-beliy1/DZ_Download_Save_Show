@@ -53,7 +53,7 @@ class CoreDataManager
             {
                 for cdPost in cdPosts
                 {
-                    let post = Post(cdPost: cdPost)
+                    let post = Post.postFrom(cdPost: cdPost)
                     posts.append(post)
                 }
             }
