@@ -10,7 +10,7 @@ import Foundation
 
 class PostsAPI
 {
-    private static var userID: Int = 1
+    private static var userID: Int = 1 // this is a bug
     
     private static let baseURLstring = "http://jsonplaceholder.typicode.com/posts?userId="
     
