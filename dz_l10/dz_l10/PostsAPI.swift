@@ -10,13 +10,15 @@ import Foundation
 
 class PostsAPI
 {
+    var ViewController: PostsTableViewController?
+    
     private static var userID: Int = 1
     
     private static let baseURLstring = "http://jsonplaceholder.typicode.com/posts?userId="
     
-    class func getPostsWith(complition: @escaping ([Post]?) -> Void)
+    func getPostsWith(complition: @escaping ([Post]?) -> Void)
     {
-        let stringURL = baseURLstring + "\(PostsAPI.userID)"
+        let stringURL = PostsAPI.baseURLstring + "\(PostsAPI.userID)"
         
         if let url = URL(string: stringURL)
         {
@@ -44,9 +46,13 @@ class PostsAPI
 
                 DispatchQueue.main.async {
                     complition(posts.count > 0 ? posts : nil)
-                    PostsAPI.userID += 1
                 }
             }.resume()
+        }
+        if (ViewController?.isInternetAvailable() == false) {
+            
+        } else {
+            PostsAPI.userID += 1
         }
     }
 }

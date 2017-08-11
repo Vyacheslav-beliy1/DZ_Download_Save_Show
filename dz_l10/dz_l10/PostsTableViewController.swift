@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import SystemConfiguration
 
 class PostsTableViewController: UITableViewController {
+    
+    var Post = PostsAPI()
     
     override var prefersStatusBarHidden: Bool {
         return true //hide status bar
@@ -19,7 +22,8 @@ class PostsTableViewController: UITableViewController {
     
     @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
         sender.beginRefreshing()
-        PostsAPI.getPostsWith { [weak self] (downloadedPosts)  in
+        Post.ViewController = self
+        Post.getPostsWith { [weak self] (downloadedPosts)  in
 
             if let unwrapedPosts = downloadedPosts
             {
@@ -37,6 +41,16 @@ class PostsTableViewController: UITableViewController {
 
             sender.endRefreshing()
         }
+        if (isInternetAvailable() == false) {
+            let message = "No internet connection available"
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: {action in
+                sender.endRefreshing()
+            })
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            
+        }
     }
     
     // MARK: - VCLifeCycle
@@ -46,6 +60,27 @@ class PostsTableViewController: UITableViewController {
         posts = self.coreDataManager.fetchPosts()
     }
 
+    // MARK: - connection to network
+    func isInternetAvailable() -> Bool
+    {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        return (isReachable && !needsConnection)
+    }
     
     // MARK: - Table view data source
 
